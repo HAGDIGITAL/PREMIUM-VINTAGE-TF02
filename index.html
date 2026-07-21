@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO -->
+    <title>Wedding Invitation | Utari & Fajar</title>           <!-- 1. GANTI JUDUL LINK DISINI -->
+    <meta name="description" content="Wedding Invitation Utari & Fajar">
+    <meta name="keywords" content="Wedding, Invitation, Pernikahan">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="img/HAG DIGITAL.png" loading="lazy">   <!-- GAMBAR LOGO DI BROWSER DISINI -->
+
+    <meta name="theme-color" content="#738FA6">
+    <meta name="msapplication-navbutton-color" content="#738FA6">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- =======================================
+            FLOATING FLOWER
+    ======================================== -->
+
+    <div id="flower-container"></div>
+
+    <!-- =======================================
+            BACKGROUND MUSIC
+    ======================================== -->
+
+    <audio id="bgMusic" loop>
+        <source src="music/MUSIC - Shape of My Heart.mp3" type="audio/mpeg">    <!-- 2. MUSIK DISINI -->
+    </audio>
+
+    <!-- =======================================
+            LOADING SCREEN
+    ======================================== -->
+
+    <div class="loading-screen" id="loadingScreen">
+
+        <div class="loader"></div>
+
+        <p>Loading Invitation...</p>
+
+    </div>
+
+    <!-- =======================================
+            MAIN PAGE
+    ======================================== -->
+
+    <div class="desktop-overlay">
+        <div class="desktop-text">
+
+            <span class="subtitle">THE WEDDING OF</span>
+
+            <h1>Utari <span>&</span> Fajar</h1>
+
+            <div class="line"></div>
+
+            <h3>30 April 2027</h3>
+
+            <p>
+                Dengan penuh rasa syukur kami mengundang
+                Bapak/Ibu/Saudara/i untuk menghadiri
+                acara pernikahan kami.
+            </p>
+
+        </div>
+    </div>
+    <!-- =======================================
+                COVER
+    ======================================== -->
+
+    <div class="page">
+
+    <section class="cover section" id="cover">
+
+        <!-- Overlay -->
+        <div class="cover-overlay"></div>
+
+        <!-- Background -->
+       
+        <div class="cover-background">
+
+
+             <video autoplay muted loop playsinline preload="none" class="bg-video">
+                 <source src="video/BGV.mp4" type="video/mp4">   <!-- 3. BACKGROUND LAYER 1 DISINI-->
+            </video>
+
+
+        </div>
+
+        <!-- Content -->
+        <div class="cover-content">
+            
+
+            <p class="cover-subtitle">          <!-- 4. NAMA ACARA DISINI -->
+                The Wedding Of
+            </p>
+
+            <h1 class="cover-title">            <!-- 5. NAMA PASANGAN DISINI -->
+                Utari
+                <span>&</span>
+                Fajar
+            </h1>
+
+            <p class="cover-date">          <!-- 6. TANGGAL PERNIKAHAN DISINI -->
+                30 April 2026
+            </p>
+
+            <div class="guest-box">
+
+                <small>Kepada Yth.</small>
+
+                <h3 id="guestName">
+                    Tamu Undangan
+                </h3>
+
+            </div>
+
+            <button
+                class="btn-open"
+                id="openInvitation">
+
+               📩 Buka Undangan
+
+            </button>
+
+        </div>
+
+        <!-- Scroll Indicator -->
+
+        <div class="scroll-indicator">
+
+            <span></span>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =======================================
+                MAIN CONTENT
+    ======================================== -->
+
+    <main id="mainContent" class="hidden">
+        <!-- =======================================
+                    HERO
+        ======================================== -->
+
+        <section class="hero section" id="hero">
+        
+
+            <div class="container">
+                
+
+                <div class="hero-image hero-img">
+
+                    <img src="img/FOTO KEDUA MEMPELAI.png" loading="lazy"alt="Utari & Fajar">   <!-- 8. FOTO PASANGAN DISINI -->
+
+                </div>
+
+                <div class="hero-text hero-text-content">
+
+                    <span class="section-subtitle"> <!-- 9. NAMA ACARA DISINI -->
+                        The Wedding Of
+                    </span>
+
+                    <h1 class="hero-title">         <!-- 10. NAMA PASANGAN DISINI -->
+
+                        Utari
+                        <span>&</span>
+                        Fajar
+
+                    </h1>
+
+                    <p class="hero-date">           <!-- 11. TANGGAL PERNIKAHAN DISINI -->
+
+                        Kamis, 30 April 2026
+
+                    </p>
+
+                    <p class="hero-time">           <!-- 12. JAM PERNIKAHAN DISINI -->
+
+                        Pukul 09.00 WIB
+
+                    </p>
+
+                </div>
+
+                <div class="hero-button hero-btn">
+
+                    <button class="btn-primary" id="saveDate">
+
+                        Save The Date
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    VERSE
+        ======================================== -->
+
+        <section class="verse section" id="verse">          <!-- 13. AYAT SUCI ALQURAN DISINI -->
+
+            <div class="container">
+
+                <div class="verse-content">
+
+                    <span class="section-subtitle">
+
+                        QS. Ar-Rum : 21
+
+                    </span>
+
+                    <h2 class="section-title">
+
+                        وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَٰجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَوَدَّةً وَرَحْمَةً ۚ
+
+                    </h2>
+
+                    <p class="verse-translate">
+
+                        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia
+                        menciptakan untukmu pasangan hidup dari jenismu
+                        sendiri supaya kamu merasa tenteram kepadanya,
+                        dan dijadikan-Nya di antaramu rasa kasih sayang."
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+
+        <!-- =======================================
+                    COUPLE
+        ======================================== -->
+
+        <section class="couple section" id="couple">
+
+                <span class="section-subtitle">
+
+                    Bride & Groom
+
+                </span>
+
+                <h2 class="section-title1">
+
+                U | F
+
+                </h2>
+
+                <p class="section-description">
+
+                Tanpa mengurangi rasa hormat,
+                kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian 
+                untuk menghadiri acara pernikahan kami
+
+                </p>
+
+            <div class="container">
+
+                <div class="couple-card">
+
+                    <img src="img/FOTO MEMPELAI PEREMPUAN.png" loading="lazy"alt="Utari">   <!-- 16. FOTO MEMPELAI PEREMPUAN DISINI -->
+
+                    <h2>            <!-- 17. NAMA MEMPELAI PEREMPUAN DISINI -->
+
+                        Utari
+
+                    </h2>
+
+                    <p>         <!-- 18. NAMA ORANG TUA MEMPELAI PEREMPUAN DISINI -->
+
+                        Putri Pertama dari
+                        <br>
+                        Bapak Sumardi
+                        <br>
+                        &
+                        <br>
+                        Ibu Pita Patimah
+
+                    </p>
+
+              
+                </div>
+
+                <div class="couple-love">
+
+                    <h1>
+
+                        &
+
+                    </h1>
+
+                </div>
+
+
+                <div class="couple-card">
+
+                    <img src="img/FOTO MEMPELAI LAKI-LAKI.png" loading="lazy"alt="Fajar"> <!-- 19. FOTO MEMPELAI LAKI-LAKI DISINI -->
+
+                    <h2>            <!-- 20. NAMA MEMPELAI LAKI-LAKI DISINI -->
+
+                        Fajar
+
+                    </h2>
+
+                    <p>         <!-- 21. NAMA ORANG TUA MEMPELAI LAKI-LAKI DISINI -->
+
+                        Putra Kedua dari
+                        <br>
+                        Bapak Acin
+                        <br>
+                        &
+                        <br>
+                        Ibu Siti Khotiman
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- =======================================
+                    COUNTDOWN
+        ======================================== -->
+
+        <section class="countdown section" id="countdown">          <!-- 21. HITUNG MUNDUR DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+
+                    Save The Date
+
+                </span>
+
+                <h2 class="section-title">
+
+                    Kami Menanti Hari Bahagia
+
+                </h2>
+
+                <p class="section-description">
+
+                    Hari yang kami nantikan akan segera tiba.
+                    Semoga Bapak/Ibu/Saudara(i) dapat hadir
+                    untuk memberikan doa restu.
+
+                </p>
+
+                <div class="countdown-box">
+
+                    <div class="countdown-item">
+
+                        <h1 id="days">0</h1>
+
+                        <span>Hari</span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <h1 id="hours">0</h1>
+
+                        <span>Jam</span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <h1 id="minutes">0</h1>
+
+                        <span>Menit</span>
+
+                    </div>
+
+                    <div class="countdown-item">
+
+                        <h1 id="seconds">0</h1>
+
+                        <span>Detik</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    LOVE STORY
+        ======================================== -->
+
+        <section class="story section" id="story">          <!-- 22. CERITA CINTA DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+
+                    Love Story
+
+                </span>
+
+                <h2 class="section-title">
+
+                    Perjalanan Cinta Kami
+
+                </h2>
+
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+
+                            2022
+
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+
+                                Awal Bertemu
+
+                            </h3>
+
+                            <p>
+
+                                Kami pertama kali bertemu di 
+                                angkringan gayeng saat
+                                masih duduk di bangku SMK.
+                                Dari sebuah perkenalan sederhana,
+                                tumbuh rasa nyaman satu sama lain.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+
+                            2023
+
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+
+                                Menjalin Hubungan
+
+                            </h3>
+
+                            <p>
+
+                                Setelah saling mengenal lebih dekat,
+                                kami memutuskan untuk bersama
+                                dan saling mendukung dalam
+                                setiap langkah kehidupan.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-year">
+
+                            2026
+
+                        </div>
+
+                        <div class="timeline-content">
+
+                            <h3>
+
+                                Menuju Pernikahan
+
+                            </h3>
+
+                            <p>
+
+                                Dengan izin Allah SWT serta doa
+                                keluarga dan sahabat,
+                                kami memutuskan melangkah
+                                ke jenjang pernikahan.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    EVENT
+        ======================================== -->
+
+        <section class="event section" id="event">          <!-- 23. ACARA PERNIKAHAN DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">         <!-- 24. NAMA ACARA DISINI -->
+
+                    Wedding Event
+
+                </span>
+
+                <h2 class="section-title">          <!-- 25. NAMA ACARA DISINI -->
+
+                    Akad & Resepsi
+
+                </h2>
+
+                <div class="event-wrapper">         <!-- 26. NAMA ACARA DISINI -->
+
+                    <div class="event-card">
+
+                        <h3>            <!-- 27. NAMA ACARA DISINI -->
+
+                            Akad Nikah
+
+                        </h3>
+
+                        <p>         <!-- 28. TANGGAL ACARA DISINI -->
+
+                            📅 Rabu, 29 April 2026
+
+                        </p>
+
+                        <p>         <!-- 29. JAM ACARA DISINI -->
+
+                            🕐 13.00 WIB
+
+                        </p>
+
+                        <p>         <!-- 30. TEMPAT ACARA DISINI -->
+
+                            Kp. Pasir Awi RT 06 / RW 02
+                            Desa Suka Asih,
+                            Pasar Kemis,
+                            Kabupaten Tangerang.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="event-card">
+
+                        <h3>            <!-- 31. NAMA ACARA DISINI -->
+
+                            Resepsi
+
+                        </h3>
+
+                        <p>         <!-- 32. TANGGAL ACARA DISINI -->
+
+                            📅 Kamis, 30 April 2026
+
+                        </p>
+
+                        <p>         <!-- 33. JAM ACARA DISINI -->
+
+                            🕘 09.00 WIB
+
+                        </p>
+
+                        <p>         <!-- 34. TEMPAT ACARA DISINI -->
+
+                            Bertempat di lokasi
+                            yang sama dengan akad.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="maps-button">
+
+                    <a href="https://maps.app.goo.gl/obUpxmfc63NTA55r7"
+                        target="_blank"
+                        class="btn-primary">            <!-- 35. LINK SHARELOKAN ACARA DISINI -->
+
+                        Lihat Lokasi
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    LOCATION
+        ======================================== -->
+
+        <section class="location section" id="location">    <!-- 43. INFO LOKASI DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+                    Location
+                </span>
+
+                <h2 class="section-title">
+                    Lokasi Acara
+                </h2>
+
+                <p class="section-description">
+                    Klik peta di bawah atau tombol lokasi untuk menuju Google Maps.
+                </p>
+
+                <div class="map-box">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126931.29878032571!2d106.38759824335938!3d-6.183842299999991!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e42007ef9f4e9ab%3A0x63814b5090cd6643!2sAR%20Motor!5e0!3m2!1sid!2sid!4v1776498687942!5m2!1sid!2sid"
+                        loading="lazy"
+                        allowfullscreen
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>           <!-- 44. IFRAME GAMBAR LOKASI DISINI -->
+
+                </div>
+                
+                <div class="maps-button">
+                    <a class="btn-primary"
+                    href="https://maps.app.goo.gl/obUpxmfc63NTA55r7"
+                    target="_blank">
+
+                        Buka Google Maps
+
+                    </a>            <!-- 45. LINK GOOGLE MAPS DISINI -->
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    WEDDING GIFT
+        ======================================== -->
+
+        <section class="gift section" id="gift">    <!-- 46. INFO HADIAH DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+                    Wedding Gift
+                </span>
+
+                <h2 class="section-title">
+                    Kirim Hadiah
+                </h2>
+
+                <p class="section-description">
+
+                    Doa restu Anda merupakan hadiah terindah.
+                    Namun apabila ingin memberikan hadiah,
+                    dapat melalui rekening berikut.
+
+                </p>
+
+                <div class="gift-card">         <!-- 47. INFO NOMER REKENING DISINI -->
+
+                    <h3>SeaBank</h3>
+
+                    <h2>
+                        901472150483
+                    </h2>
+
+                    <p>
+                        a.n Utari Nur Hanifah
+                    </p>
+
+                    <button class="btn-primary copyRekening">
+
+                        Salin Nomor Rekening
+
+                    </button>
+
+                </div>
+
+                <div class="gift-card">         <!-- 48. INFO NOMER REKENING DISINI -->
+
+                    <h3>SeaBank</h3>
+
+                    <h2>
+                        901336248560
+                    </h2>
+
+                    <p>
+                        a.n Abdul Karim Fajar Mauludin
+                    </p>
+
+                    <button class="btn-primary copyRekening">
+
+                        Salin Nomor Rekening
+
+                    </button>
+
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    RSVP
+        ======================================== -->
+
+        <section class="rsvp section" id="rsvp">    <!-- 49. INFO RSVP DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+                    RSVP
+                </span>
+
+                <h2 class="section-title">
+
+                    Konfirmasi Kehadiran
+
+                </h2>
+
+                <form id="rsvpForm">
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Nama Lengkap"
+                        required>
+
+                    <select id="attendance">
+
+                        <option value="Hadir">
+
+                            Hadir ✔️
+
+                        </option>
+
+                        <option value="Tidak Hadir">
+
+                            Tidak Hadir ❌
+
+                        </option>
+
+                    </select>
+
+                    <textarea
+                        id="message"
+                        rows="5"
+                        placeholder="Tulis doa dan ucapan..."
+                        required></textarea>
+
+                    <button
+                        type="submit"
+                        class="btn-primary">
+
+                        Kirim Ucapan
+
+                    </button>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =======================================
+                    WISHES
+        ======================================== -->
+
+        <section class="wishes section" id="wishes">    <!-- 50. INFO UCAPAN DISINI -->
+
+            <div class="container">
+
+                <span class="section-subtitle">
+                    Wishes
+                </span>
+
+                <h2 class="section-title">
+
+                    Ucapan Terbaru
+
+                </h2>
+
+                <div id="commentList">
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =======================================
+                    PESAN PENUTUP
+        ======================================== -->
+
+        <section class="welcome section" id="welcome">          <!-- 14. PESAN SELAMAT DATANG DISINI -->
+
+
+            <div class="container">
+
+                <span class="section-subtitle">
+
+                   Pesan Penutup
+
+                </span> 
+
+ 
+                <p class="section-description">
+
+                Merupakan suatu kehormatan
+                dan kebahagiaan bagi kami, 
+                apabila Bapak/Ibu/Saudara/i berkenan hadir
+                dan memberikan doa restu. Atas kehadiran dan 
+                doa restunya, kami mengucapkan terima kasih.
+                Kami yang berbahagia,
+
+                </p>
+               <h2 class="section-title1">
+
+                U | F
+
+                </h2>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =======================================
+                    FOOTER
+        ======================================== -->
+
+        <footer class="footer">         <!-- 51. INFO FOOTER    DISINI -->
+
+            <div class="container">
+
+
+                <div class="footer-brand">
+                    <p class="footer-text">
+                        Created ❤️ by <b>HAG DIGITAL</b>
+                    </p>
+                    
+                </div>
+                <div class="footer-brand">
+
+                    <a href="https://lynk.id/heyakiragroup" target="_blank">
+                        <img src="img/HAG DIGITAL.png" alt="HAG DIGITAL Logo" loading="lazy" class="footer-logo">
+                    </a>
+                    
+                    <a href="https://wa.me/6285129965012?text=Hallo%20Kak%20HAG%20DIGITAL,%20Boleh%20Minta%20Info%20Detailnya%3F" target="_blank">
+                        <img src="img/LOGOWA.png" alt="WA Logo" loading="lazy" class="footer-logo">
+                    </a>
+                </div>
+
+                <button
+                    class="music-button"
+                    id="musicButton">
+
+                    🎵
+
+                </button>
+
+            </div>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+
+
+
+<!-- JAVASCRIPT -->
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,2337 @@
+/* ===================================================
+        GOOGLE FONT
+=================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+
+/* ===================================================
+        RESET
+=================================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    font-family:'Montserrat',sans-serif;
+
+    background:#F7F5F2;
+
+    color:#738FA6;
+
+    overflow-x:hidden;
+
+}
+
+img{
+
+    display:block;
+
+    width:100%;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    border:none;
+
+    outline:none;
+
+    cursor:pointer;
+
+    font-family:inherit;
+
+}
+
+input,
+textarea,
+select{
+
+    outline:none;
+
+    border:none;
+
+    font-family:inherit;
+
+}
+
+
+/* ===================================================
+        ROOT
+=================================================== */
+
+:root{
+
+    --primary:#F3D27B;
+
+    --secondary:#5A4634;
+
+    --white:#ffffff;
+
+    --black:#222;
+
+    --text:#555;
+
+    --bg:#F7F5F2;
+
+    --card:#FFFFFF;
+
+    --border:#E5E5E5;
+
+    --shadow:0 15px 35px rgba(0,0,0,.08);
+
+    --radius:24px;
+
+}
+
+
+/* ===================================================
+        PAGE
+=================================================== */
+
+.page{
+
+    width:100%;
+
+    max-width:430px;
+
+    margin:auto;
+
+    background:var(--white);
+
+    min-height:100vh;
+
+    position:relative;
+
+    overflow:hidden;
+
+    box-shadow:0 0 40px rgba(0,0,0,.12);
+
+}
+
+
+/* ===================================================
+        CONTAINER
+=================================================== */
+
+.container{
+
+    width:min(92%,390px);
+
+    margin:auto;
+
+}
+
+
+/* ===================================================
+        SECTION
+=================================================== */
+
+.section{
+
+    padding:90px 0;
+
+    position:relative;
+
+}
+
+
+/* ===================================================
+        TYPOGRAPHY
+=================================================== */
+
+.section-subtitle{
+
+    display:block;
+
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:.95rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:12px;
+
+    text-transform:uppercase;
+
+}
+
+.section-title{
+
+    font-family:'Cormorant Garamond',serif;
+
+    text-align:center;
+
+    font-size:2.4rem;
+
+    color:#F3D27B;
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.section-title1{
+
+    font-family: 'Great Vibes', cursive;
+
+    text-align:center;
+
+    font-size:2rem;
+
+    color: var(--secondary);
+
+    line-height:1.2;
+
+    margin-bottom:20px;
+
+}
+
+.section-description{
+
+    text-align:center;
+
+    line-height:1.9;
+
+    color:#000000;
+
+    font-size:.95rem;
+
+}
+
+
+/* ===================================================
+        BUTTON
+=================================================== */
+
+.btn-primary{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:15px 35px;
+
+    border-radius:50px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.35s;
+
+}
+
+.btn-primary:hover{
+
+    background:#5A4634;
+
+    transform:translateY(-3px);
+
+}
+
+/* ===================================================
+        LOADING SCREEN
+=================================================== */
+
+.loading-screen{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#ffffff;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:20px;
+
+    z-index:99999;
+
+    transition:.5s;
+
+}
+
+.loader{
+
+    width:60px;
+
+    height:60px;
+
+    border:4px solid #E6E6E6;
+
+    border-top:4px solid var(--primary);
+
+    border-radius:50%;
+
+    animation:spin 1s linear infinite;
+
+}
+
+@keyframes spin{
+
+    100%{
+
+        transform:rotate(360deg);
+
+    }
+
+}
+
+
+
+/* ===================================================
+        COVER
+=================================================== */
+
+.cover{
+    position:relative;
+    width:100%;
+    height:100dvh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+    padding:25px;
+}
+
+
+
+/* Background */
+
+.cover-background{
+
+    position:absolute;
+
+    inset:0;
+
+}
+
+.cover-background img{
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center;
+
+}
+
+
+
+/* Overlay */
+
+.cover-overlay{
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        rgba(0,0,0,.30),
+        rgba(0,0,0,.55)
+    );
+
+}
+
+
+
+/* Content */
+
+/* ===================================
+        COVER CONTENT ANIMATION
+=================================== */
+
+.cover-content{
+
+    position: relative;
+    z-index: 10;
+
+    width: min(92%,380px);
+
+    text-align: center;
+
+    color: #738FA6;
+
+    opacity: 0;
+    transform: scale(0);
+    filter: blur(10px);
+
+    transition: none;
+
+}
+
+.cover-content.show{
+
+    opacity: 1;
+    animation: popIn 1.5s forwards;
+
+}
+
+@keyframes popIn{
+
+    0%{
+        opacity:0;
+        transform:scale(0);
+        filter:blur(10px);
+    }
+
+    60%{
+        opacity:1;
+        transform:scale(1.08); /* POP */
+        filter:blur(0);
+    }
+
+    100%{
+        opacity:1;
+        transform:scale(1);
+        filter:blur(0);
+    }
+
+}
+
+
+
+/* Subtitle */
+
+.cover-subtitle{
+
+    font-size:1rem;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+}
+
+
+
+/* Title */
+
+.cover-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4.5rem;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.cover-title span{
+    color:var(--primary);
+    
+    display:block;
+
+    font-size:2.8rem;
+    
+
+}
+
+
+
+/* Date */
+
+.cover-date{
+
+    font-size:1rem;
+
+    letter-spacing:2px;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* Guest */
+
+.guest-box{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:18px;
+
+    background:#ffff;
+
+    backdrop-filter:blur(10px);
+
+    margin-bottom:30px;
+
+}
+
+.guest-box small{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    letter-spacing:1px;
+
+}
+
+.guest-box h3{
+
+    font-size:1.25rem;
+
+    font-weight:600;
+
+}
+
+
+
+/* Open Button */
+
+.btn-open{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:50px;
+
+    background:white;
+
+    color:#FFAA00;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.btn-open:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 15px 30px rgba(0,0,0,.20);
+
+}
+
+
+
+/* Scroll Indicator */
+
+.scroll-indicator{
+
+    position:absolute;
+
+    bottom:30px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+}
+
+.scroll-indicator span{
+
+    display:block;
+
+    width:26px;
+
+    height:42px;
+
+    border:2px solid white;
+
+    border-radius:50px;
+
+    position:relative;
+
+}
+
+.scroll-indicator span::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:6px;
+
+    height:6px;
+
+    background:white;
+
+    border-radius:50%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    top:8px;
+
+    animation:scrollMouse 1.6s infinite;
+
+}
+
+@keyframes scrollMouse{
+
+    0%{
+
+        opacity:0;
+
+        top:8px;
+
+    }
+
+    50%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        top:24px;
+
+    }
+
+}
+
+
+
+/* ===================================================
+        MAIN CONTENT
+=================================================== */
+
+.hidden{
+
+    display:none;
+    opacity:0;
+
+}
+
+/* ===================================================
+                    HERO
+=================================================== */
+
+#hero,
+.hero{
+
+   background: url("img/BG3.png") center/cover no-repeat;
+
+}
+
+.hero .container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+    
+
+}
+
+
+
+/* Hero Image */
+
+.hero-image{
+
+    width:280px;
+
+    margin-bottom:35px;
+
+    position:relative;
+
+}
+
+.hero-image img{
+
+    width:100%;
+
+    border:5px solid var(--primary);
+
+   border-radius: 50%/30%;
+
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+
+}
+
+
+
+/* Ornament Circle */
+
+.hero-image::before,
+.hero-image::after{
+    display: none;
+}
+
+
+/* Hero Text */
+
+.hero-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:4rem;
+
+    color:#738FA6;
+
+    line-height:1.1;
+
+    margin-bottom:10px;
+
+}
+
+.hero-title span{
+
+    color:var(--primary);
+
+}
+
+.hero-date{
+
+    font-size:1.1rem;
+
+    color:#000000;
+
+    margin-top:10px;
+
+}
+
+.hero-time{
+
+    color:#000000;
+
+    margin-bottom:35px;
+
+}
+
+
+
+/* Save Date Button */
+
+.hero-button{
+
+    margin-top:10px;
+
+}
+
+
+
+/* ===================================================
+                VERSE
+=================================================== */
+
+.verse{
+
+    background:white;
+
+}
+
+.verse-content{
+
+    text-align:center;
+
+}
+
+.verse-content .section-title{
+
+    font-size:2.4rem;
+
+    line-height:1.2;
+
+    color:#ffffff;
+
+}
+
+.verse-content .section-subtitle{
+
+
+    color:#ffffff;
+
+}
+.verse-translate{
+
+    margin-top:25px;
+
+    line-height:2;
+
+    color:#ffffff;
+
+}
+
+
+
+/* ===================================================
+                WELCOME
+=================================================== */
+
+.welcome{
+
+    background:#fafafa;
+
+}
+
+.welcome .container{
+
+    text-align:center;
+
+}
+
+.welcome .section-title{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===================================================
+                COUPLE
+=================================================== */
+
+.couple{
+
+    background:white;
+
+}
+
+.couple .container{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    gap:45px;
+
+}
+
+
+
+/* Couple Card */
+
+.couple-card{
+
+    width:100%;
+
+    max-width:320px;
+
+    padding:30px;
+
+    background:url(img/BG3.png)center/cover no-repeat;
+
+    border-radius:50%/15%;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+    border:5px solid #F3D27B;
+
+}
+
+.couple-card img{
+
+    width:200px;
+
+    margin:auto;
+
+    border-radius:50%/30%;
+
+    margin-bottom:25px;
+
+
+
+}
+
+.couple-card h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.2rem;
+
+    color:#738FA6;
+
+    margin-bottom:15px;
+
+}
+
+.couple-card p{
+
+    color:#000000;
+
+    line-height:1.8;
+
+}
+
+
+
+/* Love Symbol */
+
+.couple-love{
+    width:90px;
+    height:90px;
+
+    margin:30px auto;
+
+    border-radius:50%;
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(111,143,175,.25);
+}
+
+.couple-love h1{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+    margin:0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+
+}
+
+
+/* ===================================================
+                    COUNTDOWN
+=================================================== */
+
+.countdown{
+
+    background:#fdfdfd;
+
+}
+
+.countdown .container{
+
+    text-align:center;
+
+}
+
+.countdown-box{
+
+    margin-top:40px;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:15px;
+
+}
+
+.countdown-item{
+
+    background:url(img/BG5.png)center/cover no-repeat;
+
+    border-radius:20px;
+
+    padding:25px 10px;
+
+    box-shadow:var(--shadow);
+
+    transition:.35s;
+
+}
+
+.countdown-item:hover{
+
+    transform:translateY(-8px);
+
+}
+
+.countdown-item h1{
+
+    font-size:2.3rem;
+
+    color:var(--primary);
+
+    margin-bottom:10px;
+
+}
+
+.countdown-item span{
+
+    font-size:.9rem;
+
+    color:#ffffff;
+
+}
+
+
+
+/* ===================================================
+                    LOVE STORY
+=================================================== */
+
+.story{
+
+    background:#fafafa;
+
+}
+
+.timeline{
+
+    margin-top:50px;
+
+    position:relative;
+
+}
+
+.timeline::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:24px;
+
+    top:0;
+
+    width:3px;
+
+    height:100%;
+
+    background:var(--secondary);
+
+}
+
+.timeline-item{
+
+    display:flex;
+
+    gap:25px;
+
+    margin-bottom:45px;
+
+    position:relative;
+
+}
+
+.timeline-year{
+
+    min-width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    border: 3px solid var(--secondary);
+
+    background:var(--primary);
+
+    color:white;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-weight:bold;
+
+    z-index:2;
+
+}
+
+.timeline-content{
+
+    flex:1;
+
+    background:url("img/BG3.png") center/cover no-repeat;
+
+    padding:25px;
+
+    border-radius:50%/15%;
+
+    box-shadow:var(--shadow);
+
+    border: 4px solid var(--primary);
+    
+
+    
+
+}
+
+.timeline-content h3{
+    margin-bottom:12px;
+    color:var(--secondary);
+    font-size:1.2rem;
+    text-align:center;
+}
+
+.timeline-content p{
+    line-height:1.8;
+    color:var(--black);
+    text-align:center;
+}
+
+
+/* ===================================================
+                    EVENT
+=================================================== */
+
+/* ===================================================
+                    EVENT
+=================================================== */
+
+.event{
+    background: white;
+}
+.event .section-title{
+
+    font-size:2.4rem;
+
+    line-height:1.2;
+
+    color:#ffffff;
+
+}
+
+.event .section-subtitle{
+
+
+    color:#ffffff;
+
+}
+
+.event-wrapper{
+    display: grid;
+    gap: 25px;
+    margin-top: 45px;
+}
+
+.event-card{
+    background-image: url("img/BG2.png"); /* Sesuaikan path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    border-radius: 50%/30%;
+    padding: 30px;
+    box-shadow: var(--shadow);
+    transition: .35s;
+    border: 5px solid var(--primary);
+}
+
+.event-card:hover{
+    transform: translateY(-8px);
+}
+
+.event-card h3{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #8B6B4A; /* Atau #000, sesuaikan sama gambar */
+    margin-bottom: 20px;
+}
+
+.event-card p{
+    text-align: center;
+    color: #000; /* Atau #000 */
+    line-height: 1.9;
+    margin-bottom: 10px;
+}
+/* Maps Button */
+
+.maps-button{
+
+    margin-top:40px;
+
+    text-align:center;
+
+}
+
+.maps-button .btn-primary{
+
+    min-width:220px;
+
+}
+
+
+
+/* ===================================================
+                SECTION ANIMATION
+=================================================== */
+
+.section{
+
+    animation:fadeUp .8s ease;
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+/* ===================================================
+                    GALLERY
+=================================================== */
+
+.gallery{
+    background: transparent;
+    position: relative;
+}
+
+.gallery .bg-video{
+    position: fixed;
+    inset: 0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    z-index:-1;
+
+    opacity:0;
+    pointer-events:none;
+}
+
+.gallery .container{
+    position:relative;
+    z-index:2;
+}
+
+/* Default (HP) */
+/* HP (default) */
+.section-subtitle {
+    color: #8B6B4A; /* warna coklat */
+}
+
+.section-title {
+    color: #8B6B4A;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    #gallery .section-subtitle,
+    #gallery .section-title {
+        color: #8B6B4A !important;
+    }
+}
+
+/* =============Gallery Grid=================== */
+/* Default (HP) */
+/* HP */
+.section-subtitle{
+    color:#8B6B4A;
+}
+
+.hero-title{
+    color:#8B6B4A;
+}
+
+
+/* Desktop */
+@media (min-width:768px){
+
+    #hero .section-subtitle,
+    #hero .hero-title{
+        color:#8B6B4A !important;
+    }
+
+}
+/* =============Gallery Grid=================== */
+/* Default (HP) */
+/* HP (default) */
+.section-subtitle {
+    color: #8B6B4A; /* warna coklat */
+}
+
+.section-title {
+    color: #8B6B4A;
+}
+.section-description {
+    color: #000000;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+    #couple .section-subtitle,
+    #couple .section-title,
+    #couple .section-description {
+        color: #8B6B4A !important;
+    }
+}
+
+
+/* ===================================================
+                    LOCATION
+=================================================== */
+
+.location{
+
+    background:white;
+
+}
+
+.map-box{
+
+    margin:35px 0;
+
+    overflow:hidden;
+
+    border-radius:25px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.map-box iframe{
+
+    width:100%;
+
+    height:350px;
+
+    border:0;
+
+}
+
+
+
+/* ===================================================
+                    WEDDING GIFT
+=================================================== */
+
+.gift{
+
+    background:#fafafa;
+
+}
+
+.gift-card{
+
+    margin-top:40px;
+
+    padding:35px;
+
+    border-radius:50%/30%;
+
+    border:5px solid var(--primary);
+
+    background:url(img/BG2.png)center/cover no-repeat;
+
+    text-align:center;
+
+    box-shadow:var(--shadow);
+
+}
+
+.gift-card h3{
+
+    color:#FFAA00;
+
+    margin-bottom:15px;
+
+}
+
+.gift-card h2{
+    font-size:1.8rem;
+    font-weight:700;
+    color:#738FA6;
+    text-align:center;
+    letter-spacing:0;
+    line-height:1.2;
+    margin-bottom:15px;
+    overflow-wrap:break-word;
+}
+
+.gift-card p{
+
+    color:#000000;
+
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===================================================
+                    RSVP
+=================================================== */
+
+.rsvp{
+
+    background:white;
+
+}
+
+.rsvp .section-title{
+
+    font-size:2.4rem;
+
+    line-height:1.2;
+
+    color:#ffffff;
+
+}
+
+.rsvp .section-subtitle{
+
+
+    color:#ffffff;
+
+}
+
+#rsvpForm{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+#rsvpForm input,
+#rsvpForm select,
+#rsvpForm textarea{
+
+    width:100%;
+
+    padding:16px;
+
+    border-radius:16px;
+
+    border:1px solid #F3D27B;
+
+    background:#fafafa;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+#rsvpForm input:focus,
+#rsvpForm textarea:focus,
+#rsvpForm select:focus{
+
+    border-color:var(--primary);
+
+    background:white;
+
+}
+
+#rsvpForm textarea{
+
+    resize:none;
+
+}
+
+
+
+/* ===================================================
+                    WISHES
+=================================================== */
+
+.wishes{
+
+    background:#fafafa;
+
+}
+
+.wishes .section-title{
+
+    font-size:2.4rem;
+
+    line-height:1.2;
+
+    color:#ffffff;
+
+}
+
+.wishes .section-subtitle{
+
+
+    color:#ffffff;
+
+}
+
+#commentList{
+
+    margin-top:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.comment-card{
+
+    background:white;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.comment-card h4{
+
+    color:var(--black);
+
+    margin-bottom:10px;
+
+}
+
+.comment-card small{
+    display: block;
+    color: #FFAA00;   /* ganti jadi kuning */
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.comment-card p{
+
+    color:#000000;
+
+    line-height:1.8;
+
+}
+
+
+
+/* ===================================================
+                    FOOTER
+=================================================== */
+
+.footer{
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    background:linear-gradient(135deg,#738FA6,#738FA6);
+
+    color:#ffffff;
+
+}
+
+.footer h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    margin-bottom:15px;
+
+}
+
+/* .welcome .end-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:2rem;
+
+    margin-bottom:15px;
+
+} */
+
+.footer p{
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+
+
+/* Floating Music Button */
+
+.music-button{
+
+    opacity:0;
+    visibility:hidden;
+
+    width:60px;
+
+    height:60px;
+
+    border-radius:50%;
+
+    position:fixed;
+
+    right:0px;
+
+    bottom:20px;
+
+    background:var(--primary);
+
+    color:white;
+
+    font-size:24px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 15px 30px rgba(0,0,0,.2);
+
+    z-index:999;
+
+    transition:.3s;
+
+}
+
+.music-button:hover{
+
+    transform:scale(0.80);
+
+}
+
+
+
+/* ===================================================
+                    RESPONSIVE
+=================================================== */
+
+@media (min-width:768px){
+
+    .page{
+
+        max-width:430px;
+
+    }
+
+}
+
+@media (max-width:420px){
+
+    .countdown-box{
+
+        grid-template-columns:repeat(2,1fr);
+
+    }
+}
+/* ===========================
+   GALLERY GRID
+=========================== */
+
+.gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.gallery-item img{
+    width:100%;
+    display:block;
+    border-radius:15px;
+}
+@media (max-width:420px){
+
+    .countdown-box{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .hero-title{
+        font-size:3.2rem;
+    }
+
+    .cover-title{
+        font-size:3.8rem;
+    }
+
+}
+
+/* ===================================
+        FLOATING DECORATION
+=================================== */
+
+
+
+/* ===================================
+        GLASS CARD
+=================================== */
+
+.glass{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(12px);
+
+    -webkit-backdrop-filter:blur(12px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:25px;
+
+}
+
+/* ===================================
+        ORNAMENT
+=================================== */
+
+.section{
+
+    position:relative;
+
+}
+
+
+/* ===================================
+        FADE UP
+=================================== */
+
+.fade-up{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:.8s;
+
+}
+
+.fade-up.show{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+/* ===================================
+        SCROLLBAR
+=================================== */
+
+::-webkit-scrollbar{
+
+    width:8px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#F5F5F5;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--primary);
+
+    border-radius:50px;
+
+}
+
+/*layer 1 cover*/ 
+/*=============================== LAYER 1 DISINI ===============================*/
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/*layer 2, hero */
+/*=============================== LAYER 2 DISINI ===============================*/
+/* ===================================================
+                    HERO
+=================================================== */
+.hero{
+    position:relative;
+    overflow:hidden;
+    background:transparent;
+}
+
+
+.hero .container{
+    position:relative;
+    z-index:2;
+}
+
+/* Ornament */
+
+.hero-image::before{
+    content:"";
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border:2px solid rgba(111,143,175,.15);
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    z-index:-1;
+}
+
+.hero-image::after{
+    content:"";
+    position:absolute;
+
+    width:360px;
+    height:360px;
+
+    border:2px dashed rgba(111,143,175,.18);
+    border-radius:50%;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+    z-index:-2;
+}
+
+/* Typography */
+/*======================================layer 2 hero===============================*/
+.hero-title{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: var(--secondary);
+    line-height: 1;
+    letter-spacing: .5px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+
+.hero-title span{
+    color:var(--primary);
+}
+
+.hero-date{
+    font-size:1.1rem;
+    color:#000;
+    margin-top:10px;
+}
+
+.hero-time{
+    color:#000;
+    margin-bottom:35px;
+}
+
+.hero-button{
+    margin-top:10px;
+}
+/*foto mempelai*/
+/*=============================== BACKGROUND VIDIO MEMPELAI DISINI ===============================*/
+.couple{
+    background:url("img/BG6.png") center/cover no-repeat;
+}
+
+
+.couple .container{
+    position:relative;
+    z-index:2;
+}
+/*kisah mempelai*/
+/*=============================== UBAH BACKGROUND KISAH MEMPEAI DISINI ===============================*/
+.story{
+    background:url("img/BG6.png") center/cover no-repeat;
+}
+/*foto prewedding mempelai*/
+/*=============================== BACKGROUND VIDIO PREWEDDING MEMPELAI DISINI ===============================*/
+.gallery {
+    position: relative;
+    overflow: hidden;
+}
+
+#gallery .bg-video{
+    position: fixed;
+    inset: 0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
+
+    opacity:0;
+    transition:.5s;
+}
+
+.gallery .container {
+    position: relative;
+    z-index: 1;
+    background: transparent;
+}
+
+
+/*kehadiran*/
+/*=============================== UBAH BACKGROUND RSVP DISINI ===============================*/
+.rsvp{
+    background:url("img/BG5.png") center/cover no-repeat;
+}
+
+
+/*ayat suci*/
+/*=============================== UBAH BACKGROUND AYAT SUCI DISINI ===============================*/
+.verse{
+    background:url("img/BG1.png") center/cover no-repeat;
+}
+
+
+/*turut mengundang*/
+/*=============================== UBAH BACKGROUND PESAN PENUTUP DISINI ===============================*/
+.welcome{
+    background:url("img/BG2.png") center/cover no-repeat;
+}
+
+
+/*hitung mundur*/
+/*=============================== UBAH BACKGROUND HITUNG MUNDUR DISINI ===============================*/
+.countdown{
+    background:url("img/BG2.png") center/cover no-repeat;
+}
+
+
+/*acara*/
+/*=============================== UBAH BACKGROUND ACARA DISINI ===============================*/
+.event{
+    background:url("img/BG1.png") center/cover no-repeat;
+}
+
+
+/*sharelokan*/
+/*=============================== UBAH BACKGROUND LOCATION DISINI ===============================*/
+.location{
+    background:url("img/BG2.png") center/cover no-repeat;
+}
+
+
+/*no rekening*/
+/*=============================== UBAH BACKGROUND GIFT DISINI ===============================*/
+.gift{
+    background:url("img/BG4.png") center/cover no-repeat;
+}
+
+
+/*ucapan*/
+/*=============================== UBAH BACKGROUND UCAPAN DISINI ===============================*/
+.wishes{
+    background:url("img/BG1.png") center/cover no-repeat;
+}
+
+
+
+/*end website*/
+/*=============================== UBAH BACKGROUND FOOTER DISINI ===============================*/
+
+/*.footer{
+    background:url("img/BG.jpeg") center/cover no-repeat;
+} */
+
+
+.footer-brand{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.footer-text{
+    margin: 0;
+}
+
+.footer-logo{
+    width: 55px;          /* sesuaikan */
+    height: 55px;
+    border-radius: 50%;
+    object-fit: contain;
+    background: #fff;
+    padding: 3px;
+    display: inline-block; /* jangan block */
+    vertical-align: middle;
+}
+
+/*layer*/
+/* =========================
+   LAYER 1
+========================= */
+
+#cover{
+    position: fixed;
+    inset: 0;
+
+    width:100%;
+    height:100vh;
+
+    z-index:9999;
+
+    overflow:hidden;
+}
+
+/* =========================
+   LAYER 2
+========================= */
+
+#mainContent{
+    
+    position:relative;
+    z-index:20;
+}
+
+/* Hidden */
+
+.hidden{
+    display:none;
+}
+
+/* ===========================
+   LOCK SCROLL
+=========================== */
+
+body.lock-scroll{
+    overflow: hidden;
+}
+
+/* ===========================
+   COVER
+=========================== */
+
+#cover{
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 9999;
+}
+
+/* ===========================
+   MAIN CONTENT
+=========================== */
+
+.hidden{
+    display: none;
+}
+
+.hero-img,
+.hero-text-content,
+.hero-btn{
+
+    opacity:1;
+
+}
+
+/* ==========================
+   LIGHTBOX
+========================== */
+
+.lightbox{
+
+    position: fixed;
+    inset: 0;
+
+    background: rgba(0,0,0,.9);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    opacity:0;
+    visibility:hidden;
+
+    transition:.3s;
+
+    z-index:9999;
+
+}
+
+.lightbox.show{
+
+    opacity:1;
+    visibility:visible;
+
+}
+
+.lightbox img{
+
+    width:90%;
+    max-width:700px;
+
+    border-radius:20px;
+
+    transform:scale(.8);
+
+    transition:.3s;
+
+}
+
+.lightbox.show img{
+
+    transform:scale(1);
+
+}
+
+.close-lightbox{
+
+    position:absolute;
+
+    top:20px;
+    right:30px;
+
+    color:white;
+
+    font-size:50px;
+
+    cursor:pointer;
+
+}
+
+
+.animate-left{
+    opacity:0;
+    transform:translateX(-60px);
+    transition:all .8s ease;
+}
+
+.animate-right{
+    opacity:0;
+    transform:translateX(60px);
+    transition:all .8s ease;
+}
+
+.animate-up{
+    opacity:0;
+    transform:translateY(60px);
+    transition:all .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translate(0,0);
+}
+
+/*==========================
+   DESKTOP - PAGE DI KANAN*/
+
+@media (min-width:768px){
+
+
+    /* Hero */
+    .hero .bg-video{
+        display:none;
+    }
+
+
+    .hero{
+        background:url(img/BG4.png)center/cover no-repeat;
+    }
+
+}
+
+@media (min-width:768px){
+
+
+    /* Couple */
+    .couple .bg-video{
+        display:none;
+    }
+
+
+    .couple{
+        background:url(img/BG4.png)center/cover no-repeat;
+    }
+
+}
+
+@media (min-width:768px){
+
+
+    /* Gallery */
+    .gallery .bg-video{
+        display:none;
+    }
+
+
+    .gallery{
+        background:url(img/BG.png)center/cover no-repeat;
+    }
+
+}
+
+/* ==========================================
+   DESKTOP - PAGE DI KANAN
+========================================== */
+
+/* ==========================================
+   DESKTOP LAYOUT PREMIUM
+========================================== */
+
+@media (min-width:768px){
+
+    body{
+        margin:0;
+        background:#ffffff;
+    }
+
+    /* Background kiri */
+body::before{
+    content:"";
+    position:fixed;
+    top:0;
+    left:0;
+    right:430px;
+    bottom:0;
+
+    background:url("img/FOTO DESKTOP.png") center/cover no-repeat;
+    z-index:-1;
+}
+
+.page{
+    width:430px;
+    margin-left:auto;
+    margin-right:0;
+}
+
+    /* Page undangan */
+    .page{
+        position:relative;
+        z-index:10;
+
+        width:430px;
+        max-width:430px;
+        min-height:100vh;
+
+        margin-left:auto;
+        margin-right:0px;
+
+        background:#ffffff;
+
+        box-shadow:
+        0 0 40px rgba(0,0,0,.18);
+    }
+
+}
+
+/* HP */
+.desktop-overlay{
+    display:none;
+}
+
+/* DESKTOP */
+@media (min-width:768px){
+
+.desktop-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:calc(100% - 430px);
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(0,0,0,.25);
+
+    z-index:5;
+}
+
+.desktop-text{
+    color:#fff;
+    text-align:center;
+    width:80%;
+    max-width:650px;
+}
+
+.subtitle{
+    font-size:15px;
+    letter-spacing:5px;
+    text-transform:uppercase;
+}
+
+.desktop-text h1{
+    font-size:72px;
+    font-family:"Great Vibes", cursive;
+    margin:15px 0;
+}
+
+.desktop-text h1 span{
+    color:#738FA6;
+}
+
+.line{
+    width:120px;
+    height:2px;
+    background:#738FA6;
+    margin:25px auto;
+}
+
+.desktop-text h3{
+    font-size:24px;
+    margin-bottom:20px;
+}
+
+.desktop-text p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+}
